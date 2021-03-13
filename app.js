@@ -8,7 +8,10 @@ qrBoton.addEventListener("click", generadorQR);
 
 function generadorQR(){
 
-    if(texto != ''){
+    if(qrTexto.value === ''){
+        alert('debe ingresar texto/link para convertir a QR')
+    }else{
+        
         let size = "1000x1000";
         let datos = qrTexto.value;
         let baseURL = "https://api.qrserver.com/v1/create-qr-code/";
@@ -17,9 +20,6 @@ function generadorQR(){
 
         qrCodigo.src = url;
         document.querySelector('#texto').value= '';
-    }else{
-        confirm('debe ingresar texto/link para convertir a QR')
-    
     }
     
 }
